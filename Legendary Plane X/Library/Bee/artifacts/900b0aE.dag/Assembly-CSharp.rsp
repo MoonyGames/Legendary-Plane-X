@@ -365,8 +365,11 @@
 -r:"Library/Bee/artifacts/900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.2.2f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.2.2f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Game/Graphics/3D/Planes/AwesomeCartoonPlanes/Scripts/Plane.cs"
-"Assets/Game/Scripts/PlaneController.cs"
+"Assets/Game/Graphics/3D/Planes/Scripts/Plane.cs"
+"Assets/Game/Scripts/Camera/CameraFollowPlane.cs"
+"Assets/Game/Scripts/Clouds/CloudMove.cs"
+"Assets/Game/Scripts/Clouds/CloudsGenerator.cs"
+"Assets/Game/Scripts/Plane/PlaneController.cs"
 -langversion:9.0
 
 /deterministic
