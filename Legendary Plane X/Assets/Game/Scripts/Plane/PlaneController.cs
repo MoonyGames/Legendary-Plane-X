@@ -8,10 +8,11 @@ public class PlaneController : MonoBehaviour
     [SerializeField]
     private float _moveSpeed = 10f;
 
-    [HideInInspector]
-    public float bottom;
+    private float bottom;
 
     private const float ROTATEDURATION = 1.5f, DEFAULTXROTATION = -90f;
+
+    public static float interpolator;
 
     private enum MoveDirection
     {
@@ -27,14 +28,19 @@ public class PlaneController : MonoBehaviour
 
     private Camera mainCamera;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
         mainCamera = Camera.main;
+
+        audioSource = GetComponent<AudioSource>();
 
         bottom = mainCamera.ScreenToWorldPoint(Vector3.zero).z;
 
         OnMove += Rotate;
         OnMove += Move;
+        OnMove += ChangePitchOnFly;
 
         OnMoveEnded += ResetRotation;
     }
@@ -77,6 +83,11 @@ public class PlaneController : MonoBehaviour
         }
     }
 
+    private void ChangePitchOnFly(MoveDirection moveDirection)
+    {
+        audioSource.pitch = Mathf.Lerp(0.75f, 1.25f, interpolator);
+    }
+
     private void Update()
     {
         OnMove?.Invoke(MoveDirection.down);
@@ -98,6 +109,8 @@ public class PlaneController : MonoBehaviour
 
         if (transform.position.y <= bottom + 1f || transform.position.y >= -bottom - 1f) //If plane gets borders of screen, it resets its rotation
             OnMoveEnded?.Invoke();
+
+        interpolator = Mathf.InverseLerp(bottom, -bottom, transform.position.y);
     }
 
     private void OnDestroy()
