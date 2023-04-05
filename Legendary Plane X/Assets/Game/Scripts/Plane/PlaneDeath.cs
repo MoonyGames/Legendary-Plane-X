@@ -53,9 +53,9 @@ public class PlaneDeath : MonoBehaviour
         rigidbody.isKinematic = false;
         boxCollider.enabled = false;
 
+        _deathScreen.SetActive(true);
+
         rigidbody.AddForce(Vector3.down * 5000f);
         rigidbody.AddTorque(Vector3.down * 10000f);
-
-        _deathScreen.SetActive(true);
     }
 }
