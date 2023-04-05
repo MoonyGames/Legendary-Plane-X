@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlaneDeath : MonoBehaviour
 {
-    public static bool isDead = false;
+    public static bool isDead;
 
     private Rigidbody rigidbody;
     private BoxCollider boxCollider;
@@ -17,8 +17,13 @@ public class PlaneDeath : MonoBehaviour
 
     private Plane plane;
 
+    [SerializeField]
+    private GameObject _deathScreen;
+
     private void Awake()
     {
+        isDead = false;
+
         rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
 
@@ -50,5 +55,7 @@ public class PlaneDeath : MonoBehaviour
 
         rigidbody.AddForce(Vector3.down * 5000f);
         rigidbody.AddTorque(Vector3.down * 10000f);
+
+        _deathScreen.SetActive(true);
     }
 }

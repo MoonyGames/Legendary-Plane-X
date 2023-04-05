@@ -8,11 +8,13 @@ public class MuteButton : MonoBehaviour
 
     private Image image;
 
-    private bool isMute = false;
+    private static bool isMute = false;
 
     private void Awake()
     {
         image = GetComponent<Image>();
+
+        image.sprite = isMute ? _muted : _unmuted;
     }
 
     public void Mute()

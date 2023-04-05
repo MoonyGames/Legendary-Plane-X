@@ -2,9 +2,10 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class GameMenuController : UIController
+public class PauseScreenController : UIController
 {
-    [SerializeField] private float _duration = 1f;
+    [SerializeField]
+    private float _duration = 1f;
 
     private float timeScale = 0f;
 
@@ -40,6 +41,8 @@ public class GameMenuController : UIController
 
     public void RestartButton()
     {
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
