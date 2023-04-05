@@ -381,6 +381,7 @@
 "Assets/Game/Scripts/Generator/ObjectPooler.cs"
 "Assets/Game/Scripts/Plane/PlaneController.cs"
 "Assets/Game/Scripts/Plane/PlaneDeath.cs"
+"Assets/Game/Scripts/UI/MuteButton.cs"
 "Assets/Packages/CustomPostProcessing/PostProcessor.cs"
 "Assets/Packages/MilkShake/Scripts/IShakeParameters.cs"
 "Assets/Packages/MilkShake/Scripts/ShakeInstance.cs"
