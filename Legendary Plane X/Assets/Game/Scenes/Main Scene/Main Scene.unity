@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65003972}
   - component: {fileID: 65003973}
+  - component: {fileID: 65003974}
   m_Layer: 0
   m_Name: Obstacles/Bonuses
   m_TagString: Untagged
@@ -171,6 +172,26 @@ MonoBehaviour:
   _timeToDestroy: 13
   objectsToPool:
   - {fileID: 66569572675266660, guid: 6baf2868a4f4f4cbc833468dbcf39bd7, type: 3}
+  _amountToPool: 5
+  _parent: {fileID: 65003972}
+  _minPosition: {x: -27, y: 200}
+  _maxPosition: {x: 27, y: 220}
+--- !u!114 &65003974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65003971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec4de56b39be4fdd86b1312991f7c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenIterations: 3
+  _timeToDestroy: 13
+  objectsToPool:
+  - {fileID: 8038241315511258251, guid: 6e4dcaf5eee4942d6b050afdf36d83a1, type: 3}
   _amountToPool: 5
   _parent: {fileID: 65003972}
   _minPosition: {x: -27, y: 200}
@@ -1749,7 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc66766ebae64bef9be2600adb73582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 0.025
+  _amount: 0.03
 --- !u!4 &1056662499
 Transform:
   m_ObjectHideFlags: 0
@@ -1910,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1208627393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13565,9 +13586,33 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8344162, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344162, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344162, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1165233895, guid: d0fdd131c76694432a69afa051d26285, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165233896, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165233896, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165233896, guid: d0fdd131c76694432a69afa051d26285, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874010154120259375, guid: d0fdd131c76694432a69afa051d26285, type: 3}
       propertyPath: m_RootOrder

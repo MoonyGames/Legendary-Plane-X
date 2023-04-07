@@ -7,6 +7,11 @@ public class SpeedUpGame : MonoBehaviour
 
     private static bool IsScaling { get; set; } = true;
 
+    private void Awake()
+    {
+        IsScaling = true;
+    }
+
     private void Update()
     {
         if (IsScaling)
