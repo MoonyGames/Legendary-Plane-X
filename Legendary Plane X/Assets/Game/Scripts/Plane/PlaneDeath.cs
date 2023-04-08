@@ -22,6 +22,8 @@ public class PlaneDeath : MonoBehaviour
 
     private void Awake()
     {
+        FlyingBombKill.OnBombKill += Death;
+
         isDead = false;
 
         rigidbody = GetComponent<Rigidbody>();
@@ -36,7 +38,7 @@ public class PlaneDeath : MonoBehaviour
         plane = GetComponent<Plane>();
     }
 
-    public void Death()
+    private void Death()
     {
         isDead = true;
 

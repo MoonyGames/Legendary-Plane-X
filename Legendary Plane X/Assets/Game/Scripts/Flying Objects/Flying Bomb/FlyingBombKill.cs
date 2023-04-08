@@ -9,6 +9,9 @@ public class FlyingBombKill : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public delegate void BombKill();
+    public static event BombKill OnBombKill;
+
     private void Awake()
     {
         boomVFX = GameObject.Find("Boom").GetComponent<ParticleSystem>();
@@ -26,13 +29,13 @@ public class FlyingBombKill : MonoBehaviour
 
             audioSource.Play();
 
+            OnBombKill?.Invoke();
+
             ObjectPooler.IsGenerating = false;
 
             ShakeCamera.singleton.Shake();
 
             SpeedUpGame.StopScaling();
-
-            other.GetComponent<PlaneDeath>().Death();
 
             boomVFX.transform.position = transform.position;
             boomVFX.Play();

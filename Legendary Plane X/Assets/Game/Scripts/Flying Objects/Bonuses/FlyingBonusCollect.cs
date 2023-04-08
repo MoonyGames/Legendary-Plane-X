@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class FlyingBonusCollect : FlyingObject
 {
-    [SerializeField]
-    private GameObject _hitParticle;
+    private GameObject hitParticle, coinParticle;
 
     private AudioSource audioSource;
 
     public delegate void BonusCollect();
-    public event BonusCollect OnBonusCollect;
+    public static event BonusCollect OnBonusCollect;
 
     private void Awake()
     {
+        hitParticle = transform.GetChild(0).gameObject;
+        coinParticle = transform.GetChild(1).gameObject;
+
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -19,7 +21,8 @@ public class FlyingBonusCollect : FlyingObject
     {
         if(other.tag == "Player")
         {
-            _hitParticle.SetActive(true);
+            hitParticle.SetActive(true);
+            coinParticle.SetActive(true);
             audioSource.Play();
 
             OnBonusCollect?.Invoke();
