@@ -20,7 +20,7 @@ public class PlaneDeath : MonoBehaviour
     [SerializeField]
     private GameObject _deathScreen;
 
-    private void Awake()
+    private void Start()
     {
         FlyingBombKill.OnBombKill += Death;
 
@@ -59,5 +59,10 @@ public class PlaneDeath : MonoBehaviour
 
         rigidbody.AddForce(Vector3.down * 5000f);
         rigidbody.AddTorque(Vector3.down * 10000f);
+    }
+
+    private void OnDisable()
+    {
+        FlyingBombKill.OnBombKill -= Death;
     }
 }
