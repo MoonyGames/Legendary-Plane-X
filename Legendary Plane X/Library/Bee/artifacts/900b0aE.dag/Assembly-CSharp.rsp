@@ -376,6 +376,7 @@
 "Assets/Game/Graphics/2D/VFX/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightFlicker.cs"
 "Assets/Game/Graphics/2D/VFX/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightIntensityFade.cs"
 "Assets/Game/Graphics/3D/Plane/Scripts/Plane.cs"
+"Assets/Game/Scripts/Audio/SoundtrackController.cs"
 "Assets/Game/Scripts/Camera/CameraFollowPlane.cs"
 "Assets/Game/Scripts/Camera/ChangeCameraFOV.cs"
 "Assets/Game/Scripts/Camera/ShakeCamera.cs"

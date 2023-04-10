@@ -23,7 +23,7 @@ public class ChangeCameraFOV : MonoBehaviour
     {
         camera.DOFieldOfView(_targetFOV, _duration).SetEase(Ease.InOutSine).OnComplete(() =>
         {
-            camera.DOFieldOfView(startFOV, 0.5f).SetEase(Ease.InOutSine);
+            camera.DOFieldOfView(startFOV, 0.75f).SetEase(Ease.InOutSine);
         });
     }
 
