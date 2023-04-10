@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OpenScene : MonoBehaviour
 {
-    public void Open(int index)
+    public virtual void Open(int index)
     {
         SceneManager.LoadScene(index);
     }

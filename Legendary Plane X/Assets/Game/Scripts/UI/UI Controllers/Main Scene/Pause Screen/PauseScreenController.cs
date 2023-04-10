@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PauseScreenController : UIController
@@ -37,12 +35,5 @@ public class PauseScreenController : UIController
         }
 
         Time.timeScale = timeScale;
-    }
-
-    public void RestartButton()
-    {
-        Time.timeScale = 1f;
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

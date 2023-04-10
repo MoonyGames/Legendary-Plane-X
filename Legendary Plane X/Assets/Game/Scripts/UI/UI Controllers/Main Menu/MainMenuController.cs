@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MainMenuController : UIController
@@ -13,10 +11,5 @@ public class MainMenuController : UIController
         {
             _tweenObjects[i].Appear(_duration);
         }
-    }
-
-    public void PlayButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

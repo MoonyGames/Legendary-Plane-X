@@ -2945,6 +2945,7 @@ GameObject:
   - component: {fileID: 1788750372}
   - component: {fileID: 1788750371}
   - component: {fileID: 1788750370}
+  - component: {fileID: 1788750376}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -3141,10 +3142,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 132346196}
-        m_TargetAssemblyTypeName: DeathScreenController, Assembly-CSharp
-        m_MethodName: MenuButton
-        m_Mode: 1
+      - m_Target: {fileID: 1788750376}
+        m_TargetAssemblyTypeName: OpenScene, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3203,6 +3204,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788750368}
   m_CullTransparentMesh: 1
+--- !u!114 &1788750376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788750368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cd826f7132a4f07b7206bc503ec639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928531420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3231,7 @@ GameObject:
   - component: {fileID: 1928531427}
   - component: {fileID: 1928531425}
   - component: {fileID: 1928531426}
+  - component: {fileID: 1928531428}
   m_Layer: 5
   m_Name: Restart Button
   m_TagString: Untagged
@@ -3290,14 +3304,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 587085905}
-        m_TargetAssemblyTypeName: GameMenuController, Assembly-CSharp
-        m_MethodName: RestartButton
-        m_Mode: 1
+      - m_Target: {fileID: 1928531428}
+        m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3476,6 +3490,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1928531428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928531420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10598e77104c4c1092426a8b45eb9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938696752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,6 +3791,7 @@ GameObject:
   - component: {fileID: 2027477027}
   - component: {fileID: 2027477026}
   - component: {fileID: 2027477025}
+  - component: {fileID: 2027477031}
   m_Layer: 5
   m_Name: Restart Button
   m_TagString: Untagged
@@ -3961,14 +3988,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 132346196}
-        m_TargetAssemblyTypeName: DeathScreenController, Assembly-CSharp
-        m_MethodName: RestartButton
-        m_Mode: 1
+      - m_Target: {fileID: 2027477031}
+        m_TargetAssemblyTypeName: OpenScene, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4023,6 +4050,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027477023}
   m_CullTransparentMesh: 1
+--- !u!114 &2027477031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027477023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cd826f7132a4f07b7206bc503ec639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031334157
 GameObject:
   m_ObjectHideFlags: 0

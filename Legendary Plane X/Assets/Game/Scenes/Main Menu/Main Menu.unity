@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 521995420}
   - component: {fileID: 521995419}
   - component: {fileID: 521995418}
+  - component: {fileID: 521995424}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -845,14 +846,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1856607650}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
-        m_MethodName: PlayButton
-        m_Mode: 1
+      - m_Target: {fileID: 521995424}
+        m_TargetAssemblyTypeName: OpenScene, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -895,6 +896,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521995416}
   m_CullTransparentMesh: 1
+--- !u!114 &521995424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521995416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cd826f7132a4f07b7206bc503ec639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538293836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1199,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1843686014}
   - {fileID: 1217791417}
+  - {fileID: 1843686014}
   m_Father: {fileID: 1856607646}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1308,7 +1321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: "\xABX\xBB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e4f67258c5044f5b9038059d4996fcf, type: 2}
   m_sharedMaterial: {fileID: 2262561896008824138, guid: 2e4f67258c5044f5b9038059d4996fcf, type: 2}
