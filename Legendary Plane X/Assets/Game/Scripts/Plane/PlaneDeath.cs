@@ -42,7 +42,7 @@ public class PlaneDeath : MonoBehaviour
     {
         isDead = true;
 
-        plane.engenOn = false;
+        plane.IsEngineOn = false;
 
         planeController.enabled = false;
 
