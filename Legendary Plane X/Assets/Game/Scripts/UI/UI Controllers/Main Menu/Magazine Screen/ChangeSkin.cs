@@ -30,8 +30,7 @@ public class ChangeSkin : MonoBehaviour
     public static event SkinBuy OnSkinBuy;
 
     private void Awake()
-    {
-        PlayerPrefs.SetInt("Coins", 1000);
+    { 
         PlayerPrefs.SetInt("Plane_0", 1);
         index = PlayerPrefs.GetInt("Plane Skin Index", 0);
 

@@ -423,6 +423,7 @@
 "Assets/Packages/MilkShake/Scripts/ShakeResult.cs"
 "Assets/Packages/MilkShake/Scripts/ShakeState.cs"
 "Assets/Packages/MilkShake/Scripts/ShakeType.cs"
+"Assets/TutorialAnimationTweening.cs"
 -langversion:9.0
 
 /deterministic
