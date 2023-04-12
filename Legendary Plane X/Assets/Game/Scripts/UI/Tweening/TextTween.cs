@@ -9,8 +9,6 @@ public class TextTween : MonoBehaviour, ITweanable
     private TextMeshProUGUI _text;
     private RectTransform _rectTransform;
 
-    private float _startPosY;
-
     [SerializeField] private bool _scaleable = true;
 
     [SerializeField] private float _finalAlpha = 1f;
@@ -19,8 +17,6 @@ public class TextTween : MonoBehaviour, ITweanable
     {
         _text = GetComponent<TextMeshProUGUI>();
         _rectTransform = GetComponent<RectTransform>();
-
-        _startPosY = _rectTransform.anchoredPosition.y;
 
         _UIController.AddTweenObjects(this);
     }
@@ -44,7 +40,8 @@ public class TextTween : MonoBehaviour, ITweanable
 
     public void Disappear(float duration)
     {
-        _rectTransform.DOScale(Vector3.zero, duration).SetUpdate(true);
+        if(_scaleable)
+            _rectTransform.DOScale(Vector3.zero, duration).SetUpdate(true);
 
         _text.DOFade(0f, duration).SetUpdate(true).OnComplete(() =>
         {

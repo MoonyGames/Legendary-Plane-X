@@ -9,6 +9,9 @@ public class FlyingBonusCollect : FlyingObject
     public delegate void BonusCollect();
     public static event BonusCollect OnBonusCollect;
 
+    public delegate void BonusCoinCollect(int count);
+    public static event BonusCoinCollect OnBonusCoinCollect;
+
     private void Awake()
     {
         hitParticle = transform.GetChild(0).gameObject;
@@ -26,6 +29,7 @@ public class FlyingBonusCollect : FlyingObject
             audioSource.Play();
 
             OnBonusCollect?.Invoke();
+            OnBonusCoinCollect?.Invoke(1);
         }
     }
 }
