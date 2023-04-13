@@ -401,6 +401,7 @@
 "Assets/Game/Scripts/UI/Tweening/Interface/ITweenable.cs"
 "Assets/Game/Scripts/UI/Tweening/RawImageTween.cs"
 "Assets/Game/Scripts/UI/Tweening/TextTween.cs"
+"Assets/Game/Scripts/UI/UI Controllers/Main Menu/DailyBonusScreenController.cs"
 "Assets/Game/Scripts/UI/UI Controllers/Main Menu/Magazine Screen/ChangeSkin.cs"
 "Assets/Game/Scripts/UI/UI Controllers/Main Menu/Magazine Screen/MagazineScreenController.cs"
 "Assets/Game/Scripts/UI/UI Controllers/Main Menu/Magazine Screen/ShowCoinsCount.cs"
@@ -413,6 +414,7 @@
 "Assets/Game/Scripts/UI/UI Controllers/Main Scene/Pause Screen/RestartButton.cs"
 "Assets/Game/Scripts/UI/UI Controllers/Main Scene/Pause Screen/ShowScores.cs"
 "Assets/Game/Scripts/UI/UI Controllers/Main Scene/ScoreCounter.cs"
+"Assets/Game/Scripts/UI/UI Controllers/Main Scene/TutorialAnimationTweening.cs"
 "Assets/Game/Scripts/UI/UI Controllers/UIController.cs"
 "Assets/Packages/CustomPostProcessing/PostProcessor.cs"
 "Assets/Packages/MilkShake/Scripts/IShakeParameters.cs"
@@ -423,7 +425,6 @@
 "Assets/Packages/MilkShake/Scripts/ShakeResult.cs"
 "Assets/Packages/MilkShake/Scripts/ShakeState.cs"
 "Assets/Packages/MilkShake/Scripts/ShakeType.cs"
-"Assets/TutorialAnimationTweening.cs"
 -langversion:9.0
 
 /deterministic
