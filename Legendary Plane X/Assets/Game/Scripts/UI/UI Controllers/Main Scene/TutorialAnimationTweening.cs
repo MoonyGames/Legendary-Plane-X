@@ -30,15 +30,11 @@ public class TutorialAnimationTweening : UIController
     {
         yield return new WaitForSecondsRealtime(5f);
 
+        Time.timeScale = 1f;
+
         for (int i = 0; i < _tweenObjects.Count; i++)
         {
             _tweenObjects[i].Disappear(_duration);
         }
-
-        yield return new WaitForSecondsRealtime(_duration);
-
-        Time.timeScale = 1f;
-
-        Destroy(gameObject);
     }
 }
