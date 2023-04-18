@@ -382,6 +382,7 @@
 "Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs"
 "Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs"
 "Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs"
+"Assets/Plugins/WebViewObject.cs"
 -langversion:9.0
 
 /deterministic

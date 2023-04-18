@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using AppsFlyerSDK;
 using Facebook.Unity;
@@ -10,29 +11,14 @@ using OneSignalSDK;
 using System.Runtime.InteropServices;
 using Unity.Advertisement.IosSupport;
 
-using static UnityEngine.Application;
-
-//using UnityEngine.UI;
-
-public class iOSScript : MonoBehaviour, IAppsFlyerConversionData
+public class IosScript : MonoBehaviour, IAppsFlyerConversionData
 {
 
 #if UNITY_IOS && !UNITY_EDITOR
     [DllImport("__Internal")]
     private static extern string _ex_getCarrier();
-    [DllImport("__Internal")]
-    extern static void launchUrl(string url);
 #endif
 
-    //[SerializeField] private Text debug_text;
-
-    public enum SCREEN_OPTIONS
-    {
-        Portrait = 0,
-        Landscape = 1
-    }
-    [SerializeField] private SCREEN_OPTIONS GAME_ORIENTATION;
-    public static bool isLandscape;
     private bool isFB;
 
     [SerializeField] private bool isOrganic;
@@ -52,9 +38,6 @@ public class iOSScript : MonoBehaviour, IAppsFlyerConversionData
 
     private void Awake()
     {
-        if (GAME_ORIENTATION == SCREEN_OPTIONS.Landscape)
-            isLandscape = true;
-
         Application.RequestAdvertisingIdentifierAsync(
             (string advertisingId, bool trackingEnabled, string error) =>
             { idfa = advertisingId; }
@@ -324,10 +307,6 @@ public class iOSScript : MonoBehaviour, IAppsFlyerConversionData
 
     private void OpenGame()
     {
-        if (isLandscape)
-            Screen.orientation = ScreenOrientation.LandscapeLeft;
-        else
-            Screen.orientation = ScreenOrientation.Portrait;
         PlayerPrefs.SetInt("inGame", 1);
         OneSignal.Default.SendTag("UserIn", "Game");
         SceneManager.LoadScene(1);
@@ -342,17 +321,13 @@ public class iOSScript : MonoBehaviour, IAppsFlyerConversionData
 #endif
     }
 
-    public static void LaunchUrl(string url)
+    public void LaunchUrl(string url)
     {
-        ShowUrlFullScreen(url);
-    }
+        SampleWebView.URL = url;
 
-    public static void ShowUrlFullScreen(string url)
-    {
-
+        StartCoroutine(SampleWebView.CreateWebView());
     }
 }
-
 [Serializable]
 public class answerData
 {
