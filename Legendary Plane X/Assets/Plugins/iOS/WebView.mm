@@ -195,7 +195,7 @@ window.Unity = { \
         }
 #endif
         WKWebView *wkwebView = [[WKWebView alloc] initWithFrame:view.frame configuration:configuration];
-        wkwebView.allowsLinkPreview = allowsLinkPreview;
+        wkwebView.allowsLinkPreview = true;
         wkwebView.allowsBackForwardNavigationGestures = allowsBackForwardNavigationGestures;
         webView = wkwebView;
         webView.UIDelegate = self;

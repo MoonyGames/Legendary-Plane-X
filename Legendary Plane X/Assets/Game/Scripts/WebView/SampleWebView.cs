@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using static System.Net.WebRequestMethods;
 
 public class SampleWebView : MonoBehaviour
 {
     public static string URL;
-
     private static WebViewObject _webViewObject;
+
+    [SerializeField]
+    private static int _YPageOffset = 100;
 
     private void Awake()
     {
@@ -25,25 +27,7 @@ public class SampleWebView : MonoBehaviour
             },
             ld: (msg) =>
             {
-#if !UNITY_ANDROID
-#if true
                 _webViewObject.EvaluateJS(@"
-                  if (window && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.unityControl) {
-                    window.Unity = {
-                      call: function(msg) {
-                        window.webkit.messageHandlers.unityControl.postMessage(msg);
-                      }
-                    }
-                  } else {
-                    window.Unity = {
-                      call: function(msg) {
-                        window.location = 'unity:' + msg;
-                      }
-                    }
-                  }
-                ");
-#else
-                webViewObject.EvaluateJS(@"
                   if (window && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.unityControl) {
                     window.Unity = {
                       call: function(msg) {
@@ -62,15 +46,12 @@ public class SampleWebView : MonoBehaviour
                     }
                   }
                 ");
-#endif
-#endif
+
                 _webViewObject.EvaluateJS(@"Unity.call('ua=' + navigator.userAgent)");
             },
             enableWKWebView: true);
-#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-        _webViewObject.bitmapRefreshCycle = 1;
-#endif
-        _webViewObject.SetMargins(0, 100, 0, 0);
+
+        _webViewObject.SetMargins(0, 0, 0, 100);
         _webViewObject.SetVisibility(true);
 
 #if !UNITY_WEBPLAYER
@@ -82,7 +63,7 @@ public class SampleWebView : MonoBehaviour
             string[] exts = new string[]{
                 ".jpg",
                 ".js",
-                ".html"
+                ".html"  // should be last
             };
 
             foreach (string ext in exts)
@@ -115,28 +96,13 @@ public class SampleWebView : MonoBehaviour
                 }
             }
         }
-#else
-        if (Url.StartsWith("http")) {
-            webViewObject.LoadURL(Url.Replace(" ", "%20"));
-        } else {
-            webViewObject.LoadURL("StreamingAssets/" + Url.Replace(" ", "%20"));
-        }
-        webViewObject.EvaluateJS(
-            "parent.$(function() {" +
-            "   window.Unity = {" +
-            "       call:function(msg) {" +
-            "           parent.unityWebView.sendMessage('WebViewObject', msg)" +
-            "       }" +
-            "   };" +
-            "});");
 #endif
-
         yield break;
     }
-
+    
     private void RefreshMargins()
     {
-        _webViewObject.SetMargins(0, 100, 0, 0);
+        _webViewObject.SetMargins(0, 0, 0, 100);
     }
 
     public void GoBackButton()
